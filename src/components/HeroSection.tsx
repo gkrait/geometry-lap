@@ -1,8 +1,38 @@
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import geoStellation from "@/assets/geo-stellation.png";
+import geoGyroid from "@/assets/geo-gyroid.png";
+import geoRibbon from "@/assets/geo-ribbon.png";
 import GeometricBackground from "./GeometricBackground";
 
+const heroImages = [
+  {
+    src: geoStellation,
+    alt: "Stellation polyhedron — computational geometry",
+  },
+  {
+    src: geoGyroid,
+    alt: "Gyroid TPMS surface — optimization and AI",
+  },
+  {
+    src: geoRibbon,
+    alt: "Smooth ribbon surface — 3D tooling",
+  },
+];
+
 const HeroSection = () => {
+  const [activeImage, setActiveImage] = useState(0);
+
+  useEffect(() => {
+    if (heroImages.length < 2) return;
+
+    const timer = window.setInterval(() => {
+      setActiveImage((prev) => (prev + 1) % heroImages.length);
+    }, 3500);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
       <GeometricBackground />
@@ -69,13 +99,37 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 0.5 }}
             className="hidden md:block relative"
           >
-            <div className="relative rounded-2xl overflow-hidden glow-border">
-              <img
-                src={geoStellation}
-                alt="3D stellation polyhedron rendered in Geometry Lap"
-                className="w-full h-auto object-cover"
-              />
+            <div className="relative rounded-2xl overflow-hidden glow-border aspect-[4/3]">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={heroImages[activeImage].src}
+                  src={heroImages[activeImage].src}
+                  alt={heroImages[activeImage].alt}
+                  initial={{ opacity: 0, scale: 1.02 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </AnimatePresence>
+
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+
+              {heroImages.length > 1 && (
+                <div className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2">
+                  {heroImages.map((image, i) => (
+                    <button
+                      key={image.src}
+                      type="button"
+                      aria-label={`Go to image ${i + 1}`}
+                      onClick={() => setActiveImage(i)}
+                      className={`h-2.5 rounded-full transition-all ${
+                        i === activeImage ? "w-6 bg-primary" : "w-2.5 bg-white/50 hover:bg-white/80"
+                      }`}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
             {/* Floating glow behind image */}
             <div className="absolute -inset-8 bg-primary/5 rounded-full blur-3xl -z-10" />

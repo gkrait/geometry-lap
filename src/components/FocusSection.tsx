@@ -1,25 +1,27 @@
 import { motion } from "framer-motion";
 import geoStellation from "@/assets/geo-stellation.png";
-import geoGyroid from "@/assets/geo-gyroid.png";
+import GG from "@/assets/GG.jpeg";
 import geoRibbon from "@/assets/geo-ribbon.png";
+import CG from "@/assets/CG.png";
+import tools_3d from "@/assets/3d_tools.png";
 
 const areas = [
   {
     title: "Computational Geometry",
-    description: "Algorithms for topology-aware shape processing, curves, surfaces, and polyhedral structures.",
-    image: geoStellation,
+    description: "From mesh processing and procedural modeling to geometric optimization, we combine mathematical rigor with visual creativity. Our goal is to bridge theory and practice—bringing geometric ideas to life in a dynamic, visual environment.",
+    image: CG,
     alt: "Stellation polyhedron — computational geometry",
   },
   {
-    title: "Optimization + AI",
-    description: "Constraint-based generation and optimization for spatial layouts and design decisions.",
-    image: geoGyroid,
+    title: "Generative Geometry",
+    description: "Instead of modeling shapes by hand, we build procedural systems that generate them—unlocking rich patterns, complexity, and unexpected forms. Blending mathematics, computation, and Blender’s powerful toolset, GG empowers creators to explore geometry in a more dynamic, iterative way—redefining how structure, space, and design come to life.",
+    image: GG,
     alt: "Gyroid TPMS surface — optimization and AI",
   },
   {
     title: "3D Tooling",
-    description: "Blender-centered tools that accelerate modeling, geometry exploration, and iteration.",
-    image: geoRibbon,
+    description: "Accelerate 3D editing workflow with faster modeling, deeper geometry exploration, and seamless iteration—all in one intuitive experience.",
+    image: tools_3d,
     alt: "Smooth ribbon surface — 3D tooling",
   },
 ];

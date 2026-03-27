@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import geoParametric from "@/assets/geo-parametric.png";
 import geoScatter from "@/assets/geo-scatter.png";
-
+import gyroid from  "@/assets/geo-gyroid.png";  
 const features = [
   "500+ production-ready meshes and curves",
   "Polyhedra, parametric, implicit, and TPMS forms",
@@ -93,7 +93,7 @@ const ProductSection = () => {
                 className="rounded-xl overflow-hidden border border-border/30"
               >
                 <img
-                  src={geoScatter}
+                  src={gyroid}
                   alt="Scattered polyhedra from Mesh Encyclopedia library"
                   className="w-full h-auto"
                 />
