@@ -15,14 +15,7 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-8 text-sm text-muted-foreground">
-            <a
-              href="https://github.com/gkrait/geometry-lap"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors"
-            >
-              GitHub
-            </a>
+           
             <a
               href="https://superhivemarket.com/products/mesh-encyclopedia"
               target="_blank"
