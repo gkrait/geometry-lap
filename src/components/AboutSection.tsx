@@ -35,9 +35,13 @@ const AboutSection = () => {
             <ul className="space-y-4">
               {[
                 "Geometry-processing tools for modeling, analysis, and automation",
+                "Optimization algorithms for geometric-related real-world problems",
                 "Certified and robust numerical methods for complex geometric structures",
                 "3D pipeline utilities for planning, simulation, and visualization tasks",
                 "Practical integrations that bridge research-grade math and production software",
+                "AI-powered tools for generative geometry algorithms",
+                "3D tooling for geometric operations",
+
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-muted-foreground">
                   <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />

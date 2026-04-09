@@ -65,10 +65,12 @@ const ConsultingContactForm = () => {
   const disabled = submitting || sent;
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 max-w-xl">
+    <form onSubmit={handleSubmit} className="w-full space-y-6">
       <div className="grid sm:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="consult-name">Name</Label>
+          <Label htmlFor="consult-name" className="text-base">
+            Name
+          </Label>
           <Input
             id="consult-name"
             name="name"
@@ -79,10 +81,13 @@ const ConsultingContactForm = () => {
             placeholder="Your name"
             required
             disabled={disabled}
+            className="h-12 px-4 py-3 text-base md:h-14 md:px-5 md:text-lg"
           />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="consult-email">Email</Label>
+          <Label htmlFor="consult-email" className="text-base">
+            Email
+          </Label>
           <Input
             id="consult-email"
             name="email"
@@ -93,21 +98,24 @@ const ConsultingContactForm = () => {
             placeholder="you@company.com"
             required
             disabled={disabled}
+            className="h-12 px-4 py-3 text-base md:h-14 md:px-5 md:text-lg"
           />
         </div>
       </div>
       <div className="space-y-2">
-        <Label htmlFor="consult-message">Message</Label>
+        <Label htmlFor="consult-message" className="text-base">
+          Message
+        </Label>
         <Textarea
           id="consult-message"
           name="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Briefly describe your project, timeline, and how we can help."
-          rows={5}
+          rows={8}
           required
           disabled={disabled}
-          className="min-h-[120px] resize-y"
+          className="min-h-[200px] resize-y px-4 py-4 text-base md:min-h-[240px] md:px-5 md:py-5 md:text-lg"
         />
       </div>
       <Button type="submit" disabled={disabled} className="w-full sm:w-auto">

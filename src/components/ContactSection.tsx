@@ -26,7 +26,7 @@ const ContactSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="glass-hover rounded-2xl p-10 md:p-12 border border-primary/15 max-w-3xl mx-auto"
+          className="glass-hover rounded-2xl p-20 md:p-20 border border-primary/15 max-w-8xl mx-auto"
         >
           <p className="text-muted-foreground leading-relaxed mb-8 text-center md:text-left">
             If you need expert guidance on algorithms, computational geometry, or related
