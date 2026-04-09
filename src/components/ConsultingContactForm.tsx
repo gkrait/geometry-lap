@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
 /** FormSubmit AJAX API — deliveries go to the inbox configured for this endpoint. */
-const CONTACT_FORM_API = "https://formsubmit.co/ajax/gmatharab1991@gmail.com";
+const CONTACT_FORM_API = "https://formsubmit.co/ajax/9ac095022f1844a6766b557a2116b7e4";
 
 const ConsultingContactForm = () => {
   const [name, setName] = useState("");
